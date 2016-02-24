@@ -15,7 +15,7 @@ Plan spotka&#324; MIM UW:
 
 * 1-2 III
 * 8-9 III
-* 15-16 III
+* 15-16 III (zajęć 16 III nie będzie)
 * 22-23 III
 * 5-6 IV
 * 12-13 IV
