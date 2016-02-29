@@ -1,15 +1,6 @@
 Statystyka II
 -------------
 
-# Motto
-
-
-# Sylabus
-
-Planowana tematyka kolejnych wykładów:
-
-
-
 Plan spotka&#324; MIM UW:
 -------------------------
 
@@ -30,18 +21,42 @@ Plan spotka&#324; MIM UW:
 * 14-15 VI
 
 
-Projects:
+
+
+Lab
+
+* wprowadzenie do R, knitr, wczytywanie danych, proste podsumowania
+* praca z waffle i githubem
+* praca z ggplot2
+
+Wykłady
+
+* klasyfikacja zmiennych, trzy cele analizy danych, statystyki opisowe dla pojedynczych zmiennych
+* eksploracja - dwie zmienne, korelacja, tabela kontyngencji (test chi2)
+* gramatyka języka prezentacji danych
+
+
+
+
+
+
+
+Projekty:
 ---------
 
-Projekty mogą być realizowane w grupach od 2 do 4 osób. Te same osoby nie mogą razem uczestniczyć w obu projektach.
+Projekty mogą być realizowane w grupach od 3 do 4 osób. Te same osoby nie mogą razem uczestniczyć w obu projektach.
+
+Pierwszy tydzień proszę przeznaczyć na zorganizowaniu się w grupy. W drugim tygodniu na ćwiczeniach będziemy omawiać sposób pracy w grupach.
+
 Projekty będą przedstawiane na zajęciach (terminy wypisane powyżej). Należy je zgłosić przez GitHuba przed prezentacją. Projekty, które nie będą zaprezentowane nie zostaną ocenione.
 
-1. Project - 
+1. Projekt - 
 
+Eksploracja i predykcja dla danych epidemiologicznych.
 
-2. Project - 
+2. Projekt - 
 
-
+Eksploracja i segmentacja dla danych behawioralnych.
 
 Ocena:
 ------
