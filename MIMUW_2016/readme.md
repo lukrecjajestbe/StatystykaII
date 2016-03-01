@@ -4,7 +4,7 @@ Statystyka II
 Plan spotka&#324; MIM UW:
 -------------------------
 
-* 1-2 III,  [Eksploracja], Statystyki opisowe dla jednej zmiennej 
+* 1-2 III,  [Eksploracja], Statystyki opisowe dla jednej zmiennej, http://bit.ly/1RCz5EE 
 * 8-9 III,  [Eksploracja], Statystyki opisowe dla dwóch zmiennych
 * 15-16 III prezentacja wyników, (zajęć 16 III nie będzie), [Projekt 1 faza 1]
 * 22-23 III [Eksploracja], gramatyka wykresów
