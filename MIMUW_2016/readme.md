@@ -47,4 +47,13 @@ Każdy projekt jest oceniany, punkty z obu projektów stanowią podstawę zalicz
 
 Po zaliczeniu projeków można podejsć do egzaminu na wyższą ocenę.
 
+Zbiory zadań:
+-------------
+
+Do wykorzystania podczas laboratorium.
+
+```
+poslowie <- archivist::aread("pbiecek/Przewodnik/arepo/07088eb35cc2c9d2a2a856a36b3253ad")
+```
+
 
