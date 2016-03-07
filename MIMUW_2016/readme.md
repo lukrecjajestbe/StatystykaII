@@ -1,25 +1,23 @@
 Statystyka II
 -------------
 
-Plan spotka&#324; MIM UW:
--------------------------
+Schedule MIM UW:
+----------------
 
-* 1-2 III,  [Eksploracja], Statystyki opisowe dla jednej zmiennej, http://bit.ly/1RCz5EE 
-* 8-9 III,  [Eksploracja], Statystyki opisowe dla dwóch zmiennych
-* 15-16 III prezentacja wyników, (zajęć 16 III nie będzie), [Projekt 1 faza 1]
-* 22-23 III [Eksploracja], gramatyka wykresów
-* 5-6 IV    [Predykcja], Regresja, kNN, drzewa, ocena jakości modelu, [Projekt 1 faza 2]
-* 12-13 IV  [Predykcja], Regresja z wieloma zmiennymi, wybór zmiennych,
-* 19-20 IV  [Predykcja], Regularyzacja, budowa nowych cech, [Projekt 1 faza 3]
-
-* 26-27 IV  [Predykcja], Klasyfikacja LDA, QDA, reg. logistyczna
-* 10-11 V   [Predykcja], SVM 
-* 17-18 V   [Predykcja], Komitety klasyfikatorów, bagging, boosting, lasy losowe [Projekt 2 faza 1]
-* 24-25 V   [Eksploracja], Analiza skupisk, k-means, PAM, agnes
-* 31-1 V    [Eksploracja], Skalowanie wielowymiarowe, [Projekt 2 faza 2]
-* 7-8 VI    [Eksploracja], Reguły decyzyjne
-* 14-15 VI  [Weryfikacja], Testowanie zbioru zmiennych, [Projekt 2 faza 3]
-
+* 1-2 III,  [Exploration], [Descriptive statistics - one variable](http://bit.ly/1RCz5EE) 
+* 8-9 III,  [Exploration], Descriptive statistics - two variables
+* 15-16 III [Exploration], Grammar of graphics (there will ne no classes - 16 III),
+* 22-23 III Project presentation at CNK, [Project 1 phase 1]
+* 5-6 IV    [Exploration], Cluter analysis, k-means, PAM, agnes
+* 12-13 IV  [Exploration], Multidimensional scaling, [Project 1 phase 2]
+* 19-20 IV  [Exploration], Decision rules
+* 26-27 IV  [Prediction], Regression, kNN, trees, model quality measures, [Project 1 phase 3]
+* 10-11 V   [Prediction], Regression with many variables, model selection,
+* 17-18 V   [Prediction], Regularisation, feature extraction, [Project 2 phase 1]
+* 24-25 V   [Prediction], Classification LDA, QDA, logistic regression
+* 31-1 V    [Prediction], SVM [Project 2 phase 2]
+* 7-8 VI    [Prediction], Bagging, boosting, random forest 
+* 14-15 VI  [Verification], Multiple hypotheses testing, [Project 2 phase 3]
 
 Projekty:
 ---------
