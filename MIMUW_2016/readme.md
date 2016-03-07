@@ -1,4 +1,4 @@
-Statystyka II
+Statistics II
 -------------
 
 Schedule MIM UW:
@@ -19,39 +19,43 @@ Schedule MIM UW:
 * 7-8 VI    [Prediction], Bagging, boosting, random forest 
 * 14-15 VI  [Verification], Multiple hypotheses testing, [Project 2 phase 3]
 
-Projekty:
+Projects:
 ---------
 
-Projekty mogą być realizowane w grupach od 3 do 4 osób. Te same osoby nie mogą razem uczestniczyć w obu projektach.
+Both projects should be executed in teams. Each team should have 3 or 4 people. You should find different teams for the second projects. 
 
-Pierwszy tydzień proszę przeznaczyć na zorganizowaniu się w grupy. W drugim tygodniu na ćwiczeniach będziemy omawiać sposób pracy w grupach.
+Projects should be presented during each phase. Projects that are not presented will not be scored.
 
-Projekty będą przedstawiane na zajęciach (terminy wypisane powyżej). Należy je zgłosić przez GitHuba przed prezentacją. Projekty, które nie będą zaprezentowane nie zostaną ocenione.
+* Project 1 - 
 
-1. Projekt - 
+Exploration and segmentation for data from CNK Science Center.
 
-Eksploracja i predykcja dla danych epidemiologicznych.
+Phase 1: 
+Create a single page overview (format A3) for selected stations (one, few or all, it's up to you).
+The overview should present distribution of playing times with different machines. 
+Consider identification of variables that may influence this variable (day of week, hour, month).
+Bring the printed overview to the presentation. We will discuss different solutions and approaches.
 
-2. Projekt - 
+* Project 2 - 
 
-Eksploracja i segmentacja dla danych behawioralnych.
+Exploration and prediction for epidemiological data.
 
-Ocena:
+Grade:
 ------
 
-Podstawą zaliczenia są projekty. 
-Projekty aby zostały ocenione musza być zaprezentowane na odpowiadających im zajeciach.
-Każdy projekt jest oceniany, punkty z obu projektów stanowią podstawę zaliczenia zajęć z maksymalną możliwą do uzyskania oceną 4.
+Each project will be graded on a scale 0-60 points.
+From projects you can get a pass (maximum grade 4).
 
-Po zaliczeniu projeków można podejsć do egzaminu na wyższą ocenę.
+Projects are performed in groups but different people would get different number of points, depending on their contribution.
 
-Zbiory zadań:
--------------
+For higher grade you need to pass a written exam.
 
-Do wykorzystania podczas laboratorium.
+
+Data sets:
+----------
+
+Will be used during classes.
 
 ```
 poslowie <- archivist::aread("pbiecek/Przewodnik/arepo/07088eb35cc2c9d2a2a856a36b3253ad")
 ```
-
-
