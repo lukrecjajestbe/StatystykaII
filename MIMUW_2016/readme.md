@@ -59,3 +59,5 @@ Will be used during classes.
 ```
 poslowie <- archivist::aread("pbiecek/Przewodnik/arepo/07088eb35cc2c9d2a2a856a36b3253ad")
 ```
+
+Small Logs: http://bit.ly/1X7A2X0
