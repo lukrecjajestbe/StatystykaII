@@ -1,0 +1,98 @@
+---
+title: "Statystyka 2 - Æwiczenia 2"
+author: "Ola Paluszynska"
+date: "Wednesday, March 09, 2016"
+output: html_document
+---
+
+# Lab 2 - Statistics 2
+ 
+## Simulations
+```{r}
+# 1. Generate two independent samples from gaussian distribution (100 observations each) check: rnorm
+n <- 100
+mu <- 0
+sig <- 1
+x <- rnorm(n, mu, sig)
+y <- rnorm(n, mu, sig)
+
+# 2. Compute Pearson correlation between these two vectors check: cor
+cor(x,y)
+
+# 3. Replicate this setting 10000 times and collect correlations from different runs check: replicate
+m <- 10000
+corrs <- replicate(m, cor(rnorm(n, mu, sig),rnorm(n, mu, sig)))
+summary(corrs)
+
+# 4. Present distribution of cor coefficients check: hist
+hist(corrs, breaks = 50)
+
+# 5. Find critical regions fot this test check: quantile
+alpha <- 0.05
+quant <- as.vector(quantile(corrs, probs = c(alpha/2, (1-alpha/2))))
+
+# 6. Generate two samples that are correlated, calculate cor coefficients
+# (formulas are for positively correlated variables)
+rho <- 0.2
+z <- rnorm(n, mu, sig)
+a <- sqrt(rho)*z + sqrt(1-rho)*x
+b <- sqrt(rho)*z + sqrt(1-rho)*y
+cor(a,b)
+
+# 7. Calculate power for this setting: fraction of samples that fall in the critical region
+# We have to adjust the formulas such that they allow negative correlation
+m <- 10000
+zm.cor <- function(rho, n=100, mu=0, sig=1){
+    x <- rnorm(n, mu, sig)
+    y <- rnorm(n, mu, sig)
+    z <- rnorm(n, mu, sig)
+    a <- sign(rho)*sqrt(abs(rho))*z + sqrt(1-abs(rho))*x
+    b <- sqrt(abs(rho))*z + sqrt(1-abs(rho))*y
+    return(cor(a,b))
+}
+korelacje <- replicate(m, zm.cor(rho))
+mean(korelacje < quant[1] | korelacje > quant[2])
+
+# 8. Calculate power as a function of real correlation. How the power behaves? Is it along our expectations?
+power.rho <- function(rho, n=100, mu=0, sig=1, m=10000){
+    korelacje <- replicate(m, zm.cor(rho)) 
+    return(mean(korelacje < quant[1] | korelacje > quant[2]))
+}
+rho.values <- seq(-1,1,0.01)
+power.result1 <- sapply(rho.values, power.rho)
+plot(rho.values, power.result1, type="l", xlab="Wspó³czynnik korelacji", ylab="Moc testu", main="Moc testu w zale¿noœci od wspó³czynnika korelacji (n=100)")
+
+# 9. Calculate power as a function of sample size
+power.n <- function(n, rho=0.2, mu=0, sig=1, m=10000){
+    korelacje <- replicate(m, zm.cor(rho, n=n))
+    return(mean(korelacje < quant[1] | korelacje > quant[2]))
+}
+n.values <- seq(10,1000,10)
+power.result2 <- sapply(n.values, power.n)
+plot(n.values, power.result2, type="l", xlab="Wielkoœæ próby", ylab="Moc testu", main="Moc testu w zale¿noœci od wielkoœci próby (rho=0.2)")
+
+# 10. Try non gaussian distributions (log-gaussian, Cauchy)  
+l = 0 # location
+s = 1 # scale
+# We need to calculate quantiles for this distribution before testing!
+zm.cor.cauchy <- function(rho, n=100, mu=0, sig=1){
+    x <- rcauchy(n, l, s)
+    y <- rcauchy(n, l, s)
+    z <- rcauchy(n, l, s)
+    a <- sign(rho)*sqrt(abs(rho))*z + sqrt(abs(1-rho))*x
+    b <- sqrt(abs(rho))*z + sqrt(abs(1-rho))*y
+    return(cor(a,b))
+}
+
+# 11. Try checking out the power for the Spearman correlation
+```
+
+## Exploration
+ 
+- Find out if there is any relation in auta2012 dataset between Color and Brand.
+ 
+Which test, which method should be used?
+ 
+- Find out if there is any relation between Price and Mileage.
+ 
+How to plot it? How to verify it?
