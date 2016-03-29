@@ -39,9 +39,10 @@ Bring the printed overview to the presentation. We will discuss different soluti
 Phase 2: 
 
 For the second phase please choose one from following topics (during lectures we will talk about algorithms that can be used for analyses). 
-A. Path analysis. What paths are typical, which exhibits are visited after which one, which exhibits are usually the last one, are there some frequent paths / sub-paths?
-B. Segmentation of visitors. Are there groups / segment of visitors with similar behaviour? Such as playing similar amount of time with given exhibits (longer/shorten than usual), are there some groups of exhibits that are visited more often by some subgroups of visitors?
-C. Deep analysis of a single selected exhibit. Exhibits are different so choose one and find group of visitors that have similar patterns of interactions with the selected exhibit. 
+
+ + A. Path analysis. What paths are typical, which exhibits are visited after which one, which exhibits are usually the last one, are there some frequent paths / sub-paths?
+ + B. Segmentation of visitors. Are there groups / segment of visitors with similar behaviour? Such as playing similar amount of time with given exhibits (longer/shorten than usual), are there some groups of exhibits that are visited more often by some subgroups of visitors?
+ + C. Deep analysis of a single selected exhibit. Exhibits are different so choose one and find group of visitors that have similar patterns of interactions with the selected exhibit. 
  
 
 
