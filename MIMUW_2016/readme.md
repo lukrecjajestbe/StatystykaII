@@ -8,7 +8,7 @@ Schedule MIM UW:
 * 8-9 III,  Descriptive statistics - two variables, [Verification](https://pbiecek.gitbooks.io/przewodnik/content/Analiza/jak_badac_zaleznosci_pomiedzy_para_zmiennych.html), [Exploration](https://pbiecek.gitbooks.io/przewodnik/content/Analiza/jak_badac_rozklad_dwoch_zmiennych.html), [Lab](https://github.com/pbiecek/StatystykaII/blob/master/MIMUW_2016/materialy/lab2.R)
 * 15-16 III [Exploration], Grammar of graphics [Theory](https://github.com/pbiecek/StatystykaII/blob/master/MIMUW_2016/materialy/grammarOfGraphics.pdf), [Tools: ggplot2](https://pbiecek.gitbooks.io/przewodnik/content/Wizualizacja/jak_tworzyc_wykresy_ggplot2.html), [Lab](https://github.com/pbiecek/StatystykaII/blob/master/MIMUW_2016/materialy/lab3.R) (there will be no classes - 16 III),
 * 22-23 III Project presentation at CNK, [Project 1 phase 1]
-* 5-6 IV    [Exploration], Cluster analysis, [k-means](https://pbiecek.gitbooks.io/przewodnik/content/Analiza/beznadzoru/kmeans.html), [PAM](https://pbiecek.gitbooks.io/przewodnik/content/Analiza/beznadzoru/pam.html), [agnes](https://pbiecek.gitbooks.io/przewodnik/content/Analiza/beznadzoru/agnes.html)
+* 5-6 IV    [Exploration], Cluster analysis, [k-means](https://pbiecek.gitbooks.io/przewodnik/content/Analiza/beznadzoru/kmeans.html), [PAM](https://pbiecek.gitbooks.io/przewodnik/content/Analiza/beznadzoru/pam.html), [agnes](https://pbiecek.gitbooks.io/przewodnik/content/Analiza/beznadzoru/agnes.html),  [Lab](https://github.com/pbiecek/StatystykaII/blob/master/MIMUW_2016/materialy/lab4.R)
 * 12-13 IV  [Exploration], Multidimensional scaling, [Project 1 phase 2]
 * 19-20 IV  [Exploration], Decision rules
 * 26-27 IV  [Prediction], Regression, kNN, trees, model quality measures, [Project 1 phase 3]
