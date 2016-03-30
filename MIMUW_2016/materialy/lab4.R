@@ -21,7 +21,8 @@ It's time to do some experiments with number of clusters
 
 1. Generate larger number (e.g. 5) of clusters of roughly the same size (e.g. 60, 80, 100, 120, 140). 
 
-Visually check what will happen when fitting 3, 5, 7 clusters. Run k-means few times, are these results stable or not?
+Visually check what will happen if you fit 3, 5 or 7 clusters. 
+Run k-means algorithm few times and check if these results are stable or not?
 
 2. Use the silhouette function to calculate the average silhouette / generate silhouette plots.
 
