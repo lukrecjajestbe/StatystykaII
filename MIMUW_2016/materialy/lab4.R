@@ -1,6 +1,7 @@
 # Lab 4 - Statistics 2
 
 # Basics
+Generate two clusters and use kmeans/pam to find them.
 
 1. Use the `rmvnorm{mvtnorm}` to draw
 - 120 observations from two-dimensional normal distribution *N(c(3,0), diag(1,2))*.
@@ -8,7 +9,7 @@
 Use the `rbind` function to combine these two groups together into a single matrix with 200 rows 2 columns.
 Plot this dataset with the `ggplot2` package
 
-If you wish to learn more how to generate data from multidimensional normal distribution, read https://pbiecek.gitbooks.io/przewodnik/content/Programowanie/generatory_3.html.
+If you wish to learn more about methods for generating data from multidimensional normal distribution, read https://pbiecek.gitbooks.io/przewodnik/content/Programowanie/generatory_3.html.
 
 
 2. Use `kmeans{stats}` and `pam{cluster}` functions to identify 2 clusters in the dataset generated in step 1.
@@ -28,6 +29,8 @@ Visually check what will happen when fitting 3, 5, 7 clusters. Run k-means few t
 
 
 # Real data [this will be fun]
+
+Let’s apply pam/kmeans to real non trivial dataset.
 
 Read data about votings from Polish Sejm 
 
@@ -70,3 +73,4 @@ geom_point()
 ggplot(ss, aes(V1, V2, color=g2)) +
 geom_point()
 ```
+
