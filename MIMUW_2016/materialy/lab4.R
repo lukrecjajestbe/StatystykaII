@@ -1,23 +1,23 @@
 # Lab 4 - Statistics 2
 
 # Basics
-Generate two clusters and use kmeans/pam to find them.
+Generate two clusters and use kmeans/pam algorithms to find them.
 
 1. Use the `rmvnorm{mvtnorm}` to draw
 - 120 observations from two-dimensional normal distribution *N(c(3,0), diag(1,2))*.
 -  80 observations from two-dimensional normal distribution *N(c(0,3), diag(1,2))*.
-Use the `rbind` function to combine these two groups together into a single matrix with 200 rows 2 columns.
-Plot this dataset with the `ggplot2` package
+Then use the `rbind` function to combine these two groups together into a single matrix with 200 rows 2 columns.
+Plot this dataset with the `ggplot2` package.
 
 If you wish to learn more about methods for generating data from multidimensional normal distribution, read https://pbiecek.gitbooks.io/przewodnik/content/Programowanie/generatory_3.html.
 
 
-2. Use `kmeans{stats}` and `pam{cluster}` functions to identify 2 clusters in the dataset generated in step 1.
+2. Use `kmeans{stats}` and `pam{cluster}` functions to identify 2 clusters in the dataset generated in the step 1.
 
 
 # Simulations
 
-It's time to do some experiments with number of clusters
+It's time to do some experiments with the number of clusters
 
 1. Generate larger number (e.g. 5) of clusters of roughly the same size (e.g. 60, 80, 100, 120, 140). 
 
@@ -26,7 +26,7 @@ Run k-means algorithm few times and check if these results are stable or not?
 
 2. Use the silhouette function to calculate the average silhouette / generate silhouette plots.
 
-3. Compare the average silhouette for different number of clusters
+3. Compare the average silhouette for different number of clusters.
 
 
 # Real data [this will be fun]
@@ -37,11 +37,11 @@ Read data about votings from Polish Sejm
 
 votings <- archivist::aread("pbiecek/Przewodnik/arepo/9175ec8b23098c4364495afde9a2cc17")
 
-If needed you can fill missing data with some value
+If needed you can fill missing data with some value, e.g. "Not present"
 
 votes_wide[is.na(votes_wide)] <- "Not present"
 
-Use `daisy()` function or some other method to calculate distance matrix between deputies.
+Use `daisy()` function or some other method to calculate the distance matrix between deputies.
 Find some good (what is good?) number of clusters for these deputies and check what is the relation between deputies clubs and clusters created based on their votes.
 
 
