@@ -31,7 +31,7 @@ Run k-means algorithm few times and check if these results are stable or not?
 
 # Real data [this will be fun]
 
-Let’s apply pam/kmeans to real non trivial dataset.
+Let’s apply pam to real non trivial dataset.
 
 Read data about votings from Polish Sejm 
 
@@ -39,7 +39,7 @@ votings <- archivist::aread("pbiecek/Przewodnik/arepo/9175ec8b23098c4364495afde9
 
 If needed you can fill missing data with some value, e.g. "Not present"
 
-votes_wide[is.na(votes_wide)] <- "Not present"
+votings[is.na(votings)] <- "Not present"
 
 Use `daisy()` function or some other method to calculate the distance matrix between deputies.
 Find some good (what is good?) number of clusters for these deputies and check what is the relation between deputies clubs and clusters created based on their votes.
