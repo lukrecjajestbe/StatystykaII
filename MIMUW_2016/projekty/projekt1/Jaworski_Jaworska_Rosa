@@ -1,0 +1,28 @@
+Ogólnie:
+Bardzo proste statystyki, tylko barploty i histogram. Wypadało by pokazać coś bardziej zaawansowanego i przemyślanego.
+
+Na plus:
+Histogramy z czasem gry mają tą samą oś OX.
+
+Na minus:
+Kolory są przypadkowe (czas gry jest czasem zielony a czasem fioletowy), z wykresów trudno odczytać jakieś wartości. Wykresy paskowe po lewej stronie pokazują po kilka liczb (5-6 liczb każdy), ale są znacznie większe niż byłaby tabela z tymi liczbami a znacznie trudniej je odczytać.
+
+
+Inne:
+
+Estetykę tego plakatu nalezy podnieść. Nie ma powodu by dublować tytuły, np. ‘Rozkład czasu gry’ jest i na wykresie i nad wykresem.
+Wykresy w ggplot2 wyglądałyby znacznie lepiej.
+
+Warto popracować nad detalami. Np. czas gry przedstawiony jest w sekundach, ale dla sekund na osi OX warto byłoby pokazać znaczniki na wartościach 30/60/90 a nie 50/100.
+
+Są dwa histogramy dla czasu gry Niedziela/Środa. Ale co z nich wynika? Różnią się, nie różnią się, o ile się różnią? Ja nie potrafię praktycznie nic odczytać z tych wykresów.
+
+Wykresy paskowe są strasznie spłaszczone, trudno cokolwiek z nich odczytać. Lepiej byłoby te paski zrobić poziome, lub umieścić je obok siebie.
+Z pewnością też sama tabela z 6 liczbami byłaby bardziej czytelna, ponieważ teraz naprawdę trudno odgadnąć jakie są wyniki dla niedzieli.
+
+Dlaczego średni czas gry w kwietniu jest najniższy? Z czego to może wynikać?
+Są pokazane podstawowe statystyki, ale brakuje dalszego pociągnięcia przedstawionych historii.
+
+Czy naprawdę różnica pomiędzy kwietniem a styczniem jest mniejsza niż pomiędzy wtorkiem a niedzielą? Nie widać tego.
+Generalnie, wykresy są bardzo podstawowe i nie widać związku pomiędzy nimi a wnioskami.
+

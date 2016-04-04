@@ -1,0 +1,26 @@
+Ogólnie:
+Widać włożoną pracę, wykresy nie są przypadkowe.
+Dobrze, że zidentyfikowali Państwo noc muzeów. 
+Jednak te wykresy z różnymi panelami (facet_wrap) utrudniają porównywanie stacji/dni tygodnia.
+
+Na plus:
+Z różnych powodów, wykres po lewej stronie u góry jest dobry (najlepszy z zaprezentowanych). 
+Aby był lepszy, mogliby Państwo zaznaczyć poziomą kreską np. średnią na tydzień. Byłaby znacznie lepsza do odczytania i interpretacji niż obecnie rysowany trend, wątpliwej sensowności (po co uwzględniać poniedziałki do liczenia trendu.).
+Ale i tak pokazywanie pojedynczych dni jako słupki to był dobry pomysł.
+
+Na minus:
+Dlaczego wszystko jest niebieskie? Ale część wykresów ma obwódkę a część nie. Wygląda to jakby wykresy robiły trzy różne osoby i już później nie chciało im się uspójniać wyglądu. 
+
+
+Inne:
+
+Skoro w poniedziałki CNK jest zamknięte, można ten dzień usunąć z wykresów po lewej stronie.
+
+Zaznaczenie nocy muzeów to dobry pomysł, ciekawa obserwacja, ale co z datami z początku kwietnia? Tam też działo się coś ciekawego.
+
+Wykres ‘Rozkład czasu spędzonego’ wygląda ciekawie, ale nie sposób na nim porównać różnych dni. Ten sposób prezentacji uniemożliwia odczytanie czy pomiędzy dniami tygodnia są różnice. Inne grupy przedstawiły te wartości jako rozkłady lub średnie, i tedy można zauważyć różnice pomiędzy dniami tygodnia.
+Wykres po prawej stronie na dole jest czytelny. Przy czym te małe wartości po 22 dotyczą tylko nocy muzeów, Może więc należałoby jakoś te dane ustandaryzować przed prezentacją?
+
+Ogólnie te histogramy w skali log nie są najlepszym pomysłem, Nie sposób porównać stacji. 
+
+Do prawych wykresów nie ma komentarzy, są tylko dla lewych wykresów.
