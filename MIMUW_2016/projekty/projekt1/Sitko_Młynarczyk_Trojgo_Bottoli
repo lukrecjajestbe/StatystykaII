@@ -1,0 +1,17 @@
+Overall:
+I like some solutions that you have used. But once you noticed that something isinteresting (like densities), you should go one step forward and apply it to all stations. Here it would be nice to see comparison of distributions for all stations.
+
+In plus:
+Comments are good.
+Selecting only the most interesting stations – this is really good.
+Comparing two very different distributions – it is good because it is clearly visible that there are some differences.
+
+In minus:
+Ordering on the left plot do not bring any information. You shall consider sorting of stations names.
+
+Others:
+
+Left plots are nice. It is good a idea to present only the stations with highest values. One thing that you could improve: now the ordering is meaningless. Instead this you could present these values sorted (it’s called waterfall plot). It will be easier to see what is the distribution of averages/number of interactions.
+
+Right plots are interesting. It’s clear that by comparing distributions you can see how large are differences between stations.
+But note, that after these two plots, you should their distributions. There are presented as vioplots for each station (sorted along average number of interactions / number of activities)
