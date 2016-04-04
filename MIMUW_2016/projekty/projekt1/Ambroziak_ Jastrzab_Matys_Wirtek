@@ -1,0 +1,23 @@
+Ogólnie:
+Szału nie ma. Proste statystki. Brakuje wniosków.
+
+Na plus:
+Względna spójność w prezentowaniu wyników (histogram, barplot i opis liczbowy).
+
+Na minus:
+Różna liczba słupków w histogramie na różnych wykresach. Po co histogram pokazuje gęstość, lepiej by pokazywał liczebność. Można by więcej odczytać.
+Wykresy są niedopracowane, wszystko takie same, nie wiadomo na co zwrócić uwagę.
+
+Inne:
+
+Gdyby te wykresy nie były wszystkie niebieskie, może łatwiej by było zobaczyć jakąś strukturę w nich. Można użyć kolorów by oznaczyć albo typ wykresie (dwa kolory godziny/czas) lub eksponat (cztery kolory).
+
+Dlaczego histogram dla stacja38 ma więcej przedziałów niż pozostałe?
+
+Wykres z liczbą sekund powinien mieć jakąś czytelniejszą oś, lepiej już oznaczyć 30/60/90/120 sekund, a nie ta jak teraz jest 50/100/150.
+
+Na wykresach z godzinami czasem jest godzina8 a czasem nie, czasem jest 2 a czasem nie. To utrudnia czytanie wykresów.
+
+Jest opis czasu interakcji i godziny interakcji. Ale brakuje wniosków wynikających z porównania stacji. 
+
+Co wynika z tych analiz?
