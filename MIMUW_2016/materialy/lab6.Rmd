@@ -24,6 +24,8 @@ Let's use association rules to find some structure in data related to grades.
 8. Install the `arulesViz` package. Use the `plot()` / `itemFrequencyPlot()` function to investigate the set of rules. 
 
 
+Looking for more? Try this dataset: `379dde77e1b8446ecdb0e87fc6552909`.
+
 ## Principal Components Analysis
 
 Let's play with data related to movies, from Hollywood Insider.
