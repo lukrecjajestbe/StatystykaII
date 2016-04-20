@@ -1,0 +1,237 @@
+---
+output: html_document
+---
+install.pac---
+title: "projekt1"
+author: "jhi"
+date: "5 kwietnia 2016"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+library('dplyr')
+library('ggplot2')
+library('tidyr')
+
+
+
+library(stringdist)
+library(MASS)
+library(cluster)
+
+
+
+
+```
+
+
+Data preparation:
+- filter non-valid visitors
+- count interaction time of each user with each station
+
+
+
+```{r, cache=TRUE, warning=FALSE}
+load("~/Pulpit/statystyka_projekt1/smallLogs.rda")
+smallLogs <- smallLogs %>% filter(visitor != -1)
+smallLogs$visitor_change <- smallLogs$visitor != lag(smallLogs$visitor)
+smallLogs$visitor_change[1] <- FALSE
+smallLogs$visit_id <- cumsum(smallLogs$visitor_change)
+
+time_diffs <- smallLogs %>% group_by(visit_id, station, visitor) %>% summarise(enter_time = first(date), leave_time = last(date), time_spent = leave_time - enter_time)
+
+time_diffs$station <- factor(time_diffs$station)
+time_diffs <- transform(time_diffs, visitor_id = paste(visitor,  as.Date(enter_time), sep='_'))
+
+```
+
+Filter unusually long times - possible mistakes
+```{r, cache=TRUE, warning=FALSE}
+#upper_limit <- quantile(time_diffs$time_spent, 0.99)
+hist(log10(time_diffs$time_spent))
+upper_limit <- 10^4
+time_diffs <- time_diffs %>% as_data_frame() 
+
+#filer unusually long times
+time_diffs <- time_diffs  %>% filter(time_spent <= upper_limit)
+
+```
+
+
+
+
+Selecting subset if needed for tests
+```{r, eval=FALSE}
+###
+time_diffs2 <- sample_frac(time_diffs2, 0.01)
+
+```
+
+
+
+
+Maybe use following metric - similarity between two empirical cdf's of visiting time distribution on given station (the metric could be either p-value of Kolmogorov-Smirnov Test or KS test statistic)
+```{r, cache=TRUE, warning=FALSE}
+visit_time_range <- range(time_diffs$time_spent)
+min_vt <- visit_time_range[[1]]
+max_vt <- visit_time_range[[2]]
+range_vt <- seq(min_vt,max_vt,by = 1)
+
+by_station <- split(time_diffs$time_spent,time_diffs$station,drop=TRUE)
+by_station_ecdf <- lapply(by_station, function(x){return(ecdf(x)(range_vt));})
+
+dist_KS_mtx <- Vectorize(function(i,j){
+  v1 <- by_station_ecdf[[i]];
+  v2 <- by_station_ecdf[[j]];
+  kst <- ks.test(v1,v2);
+  s <- kst$statistic;
+  names(s) <- NULL;
+  return(s);  
+})
+
+dist_mtx <- outer(1:length(by_station_ecdf),1:length(by_station_ecdf),dist_KS_mtx)
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+Paths 
+```{r,  cache=TRUE, warning=FALSE}
+station_names <- time_diffs %>% distinct(station) %>% dplyr::select(station)
+station_names <- station_names %>% mutate(station_char = c(letters, LETTERS, 1:7)) #na sztywno
+
+time_diffs <- time_diffs %>% ungroup() %>% arrange(visitor, enter_time)
+time_diffs <- time_diffs %>% mutate(station_char = plyr::mapvalues(station, as.vector(station_names$station), as.vector(station_names$station_char)))
+
+paths <- time_diffs %>% group_by(visitor, date = as.Date(enter_time)) %>% summarise(path = paste(station_char, collapse = ''))
+paths <- paths %>% mutate(n = nchar(path))
+paths <- paths %>% filter(n >= 10)
+
+```
+
+Use similarity of station visit profile as a distance between paths
+
+```{r,  cache=TRUE, warning=FALSE}
+
+library(Biostrings)
+paths2 <- paths %>%  filter(n == 10) %>% ungroup() %>% sample_n(size=2000)
+
+#check 
+station_names$station == names(by_station)
+
+row.names(dist_mtx) <- station_names$station_char
+colnames(dist_mtx) <- station_names$station_char
+
+paths_dists <- stringDist(as.vector(paths2$path),method="substitutionMatrix", 
+  substitutionMatrix = dist_mtx
+)
+#paths_dists <- stringdistmatrix(as.vector(paths2$path), as.vector(paths2$path), method='osa')
+hist(paths_dists)
+
+``` 
+
+We try to cluster, although we don't see clusters on plots after transforming into 2D. But Shepard
+plots look bad, so transformation is not informative.
+
+```{r, cache=TRUE, warning=FALSE}
+cmd <- cmdscale(paths_dists)
+plot(cmd)
+shep <- Shepard(paths_dists, cmd)
+plot(shep)
+df1 <- data.frame(x = cmd[,1], y = cmd[,2])
+
+newcoord <- isoMDS(paths_dists)
+plot(newcoord$points)
+
+shep <- Shepard(paths_dists, newcoord$points)
+plot(shep)
+
+df2 <- data.frame(x = newcoord$points[,1], y = newcoord$points[,2])
+
+
+#k-medoids 
+kmedoids <- pam(paths_dists, 10)
+df1$cluster <- as.factor(kmedoids$clustering)
+
+print(paths2[kmedoids$medoids,])
+
+ggplot(df1, aes(x=x, y=y)) + geom_point(aes(color=cluster))
+
+
+#hierarchical clustering - bad...
+
+tree1 <- agnes(paths_dists, method = "ward")
+clusters <- factor(cutree(tree1, 10))
+
+summary(clusters)
+df1$cluster <- clusters
+ggplot(df1, aes(x=x, y=y)) + geom_point(aes(color=cluster))
+
+#
+
+```
+
+
+
+
+
+
+
+
+
+Old stuff...
+
+
+Distribution of visits to different stations by each visitor
+
+```{r, eval=FALSE}
+
+visitors_all <- time_diffs %>% group_by(visitor_id)  %>%  summarise(counts = n()) # %>% filter(counts > 1)
+hist(visitors_all$counts, breaks=c(0,1,2,3,4,6,8,10,15,20,30,40,50,60,70,80,90,120))
+
+```
+
+
+Preparation of data_frame with time of visit to each station. Filtering visitors visiting 
+less than C stations. 
+
+```{r, eval=FALSE}
+C <- 4
+time_diffs2 <- time_diffs %>% group_by(visitor_id) %>%   filter(sum(cumany(station)) >= C ) 
+
+
+#zmniejszenie zbioru do testow
+time_diffs3 <- time_diffs2 %>% filter(enter_time < as.POSIXct(as.Date("2012-01-10") )) 
+data <- spread(time_diffs3, key=station, value=time_spent, fill = 0, convert = FALSE)
+
+#hist((time_diffs2 %>% group_by(station) %>% summarise(counts=n(), sum=mean(time_spent)))$sum)
+
+```
+
+
+PCA - not a good idea
+
+```{r, eval=FALSE}
+dists <- dist(data, method="canberra")
+
+pca <- prcomp(data[,-1:-5], center = TRUE, scale. = TRUE)
+summary(pca)
+
+```
+
+
+
+
+
+
+
